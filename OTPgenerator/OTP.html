@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+         h1{
+            color: rgb(201, 39, 66);
+            text-align: center;
+        }
+
+        .box{
+            height: 200px;
+            width: 300px;
+            background-color: black;
+            margin:50PX auto;
+        }
+
+        .box button{
+            margin-left: 100px;
+            margin-top: 50px;
+            padding: 10px 40px;
+        }
+
+        .box h2{
+            color: wheat;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+   <h1>OTP generator</h1>
+    <div class="box">
+        
+    <button onclick="otp()">OTP</button>
+    <h2></h2>
+    </div>
+
+    <script>
+        // function otp()
+        // {
+        //     let otp=''
+
+        //     for(let i=0;i<4;i++)
+        //     {
+        //        otp=otp+Math.trunc(Math.random()*10);  
+
+        //     }
+            
+        //     document.querySelector('h2').innerHTML='OTP is   '+otp
+
+        // }
+
+        function otp()
+        {
+            let x=Math.trunc(Math.random()*10)
+            let y=Math.trunc(Math.random()*10)
+            let z=Math.trunc(Math.random()*10)
+            let a=Math.trunc(Math.random()*10)
+
+            let r=(`${x}${y}${z}${a}`)
+
+            document.querySelector('h2').innerHTML='OTP is   '+r
+
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table{
+            background-color: black;
+            color: pink;
+          
+        }
+
+        button{
+            width: 50px;
+        }
+        #s{
+            width: 400px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+   <center><table border="2px" cellpadding="20px" cellspacing="10px">
+        <tr>
+            <td colspan="4"> <input type="text" placeholder="0"  id="s"> </td>
+        </tr>
+
+        <tr>
+            <td ><button id="ac">AC</button></td>
+            <td ><button id="ce">CE</button></td>
+            <td ><button class="x">/</button></td>
+            <td ><button class="x">%</button></td>
+        </tr>
+
+        <tr>
+            <td ><button class="x">1</button></td>
+            <td ><button class="x">2</button></td>
+            <td ><button class="x">3</button></td>
+            <td ><button class="x">+</button></td>
+        </tr>
+        
+        <tr>
+            <td ><button class="x">4</button></td>
+            <td ><button class="x">5</button></td>
+            <td ><button class="x">6</button></td>
+            <td ><button class="x">-</button></td>
+        </tr>
+
+        <tr>
+            <td ><button class="x">7</button></td>
+            <td ><button class="x">8</button></td>
+            <td ><button class="x">9</button></td>
+            <td ><button class="x">*</button></td>
+        </tr>
+
+        <tr>
+            <td ><button class="x">0</button></td>
+            <td ><button class="x">00</button></td>
+            <td ><button class="x">.</button ></td>
+            <td id="eq"><button>=</button></td>
+        </tr>
+    </table>
+</center> 
+
+    <script>
+        let srn=document.getElementById("s")
+        console.log(srn);
+        let a=document.getElementsByClassName("x")
+        console.log(a);
+        
+
+        for(let i=0;i<a.length;i++)
+        {
+            a[i].addEventListener("click",()=>
+            {
+                srn.value=srn.value+a[i].innerHTML
+            } )
+        }
+
+        let b=document.getElementById("ac")
+        b.addEventListener("click",()=>
+        {
+            srn.value=""
+        })
+
+        let c=document.getElementById("ce")
+        c.addEventListener("click",()=>
+        {
+            srn.value=srn.value.slice(0,srn.value.length-1)
+        })
+
+        let d=document.getElementById("eq")
+        d.addEventListener("click",()=>
+        {
+            srn.value=eval(srn.value)
+        })
+    </script>
+</body>
+</html>
